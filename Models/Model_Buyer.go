@@ -1,7 +1,11 @@
 package Models
 
 type Buyer struct {
-	Id   int32
+	Id   int
 	Name string
-	Age  int16
+	Age  int
+}
+
+func New_Buyer() *Buyer {
+	return &Buyer{}
 }

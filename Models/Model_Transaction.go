@@ -1,9 +1,13 @@
 package Models
 
 type Transaction struct {
-	Id       int32
-	BuyerId  int32
+	Id       int
+	BuyerId  int
 	IP       string
 	Device   string
-	Producto []int32
+	Producto []int
+}
+
+func New_Transaction() *Transaction {
+	return &Transaction{}
 }

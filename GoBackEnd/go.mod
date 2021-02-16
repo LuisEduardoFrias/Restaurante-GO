@@ -7,4 +7,5 @@ require (
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/githubnemo/CompileDaemon v1.2.1 // indirect
 	github.com/go-chi/chi v1.5.2
+	github.com/go-chi/cors v1.1.1
 )

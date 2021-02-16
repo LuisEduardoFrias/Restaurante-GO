@@ -1,6 +1,18 @@
 <template>
 
-    <h1>{{titulo}}</h1>
+    <div>
+        
+        <h1>{{ Token }}</h1>
+
+        <h1>{{ titulo }}</h1>
+
+        <h2>{{ Id }}</h2>
+
+        <h2>{{ Name }}</h2>
+
+        <h2>{{ Age }}</h2>
+
+    </div>
 
 </template>
 
@@ -13,33 +25,59 @@ export default
     data()
     {
         return{
-            titulo : 'Hola'
+            titulo : "Status Code",
+            Id : "0",
+            Name : "",
+            Age : "0",
+            Token : "token"
         }
     },
     mounted()
     {
+        this.PostTodos();
         this.getTodos();
     },
     methods:
     {
-        getTodos()
+        PostTodos()
         {
-           
-           //const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRFQ05PU0lTUkQiLCJUZWNub3Npc1ZhbHVlIjoiVmFsdWVUZWNub3NpcyIsImp0aSI6IjU2NWYwMjYxLWQzYzktNDFjYS05YWQ1LTdiY2NlOTRiYmFjZiIsImV4cCI6MTYxMzUyNzI4OX0.A4ux0lOpjpjNClGyek_gmbVQjA5Vl6Qs8A8TGc06tx0'
-
-            axios.get('http://localhost:3000/GetAllBuyers', //http://localhost:53814/api/Zona/', 
+            axios.post('http://localhost:53814/api/Credenciales',
             {
-               //headers: 
-               //{
-               //    'Authorization': `Basic ${token}`
-               //}
+                userName: 'TECNOSISRD',
+                passwordHash: 'TECNOSISRD'
             })
             .then(response => 
             {
-                this.titulo = response.status.toString()
+                this.Token = response.data.token.token.toString()
+                console.log(response.data.token.token);
+            })
+            .catch(e => console.log(e));
+        },
+
+        
+        getTodos()
+        {
+            axios.get('http://localhost:53814/api/Zona/', //http://localhost:53814/api/Zona/',http://localhost:3000/GetBuyerPerId/95195187 
+            {
+               headers: 
+               {
+                   "Authorization": `Bearer ${this.Token}`
+               }
+            })
+            .then(response => 
+            {
+                this.titulo = "Status Code: " + response.status.toString()
+                this.Id = " ID: " + response.data.Id
+                this.Name = " NAME: " + response.data.Name 
+                this.Age = " AGE: " + response.data.Age
+
                 console.log(response)
-            }).catch(e => console.log(e))
+            })
+            .catch(e => {
+                 this.titulo = e.toString()
+                console.log(e)})
         }
+
     }
 }
 

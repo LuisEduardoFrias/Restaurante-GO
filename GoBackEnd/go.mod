@@ -1,11 +1,8 @@
-module github.com/LuisEduardoFrias/Restaurante
+module github.com/LuisEduardoFrias/Restaurante/GoBackEnd
 
 go 1.15
 
 require (
-	github.com/fatih/color v1.10.0 // indirect
-	github.com/fsnotify/fsnotify v1.4.9 // indirect
-	github.com/githubnemo/CompileDaemon v1.2.1 // indirect
-	github.com/go-chi/chi v1.5.2
-	github.com/go-chi/cors v1.1.1
+	github.com/dgraph-io/dgo/v2 v2.2.0 // indirect
+	github.com/dgraph-io/dgo/v200 v200.0.0-20210212152539-e0a5bde40ba2 // indirect
 )

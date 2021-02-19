@@ -14,9 +14,12 @@ func Routes() *chi.Mux {
 
 	// CORS básico
 	// para obtener más ideas, consulte: https://developer.github.com/v3/#cross-origin-resource-sharing
+
 	r.Use(cors.Handler(cors.Options{
+
 		//AllowOrigins:  	  [] string {"https://foo.com"}, // Use esto para permitir hosts de origen específicos
 		AllowedOrigins: []string{"*"},
+
 		//AllowOriginFunc:  func (r * http.Request, cadena de origen) bool {return true},
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
@@ -29,6 +32,7 @@ func Routes() *chi.Mux {
 	r.Get("/GetAllBuyers", Controllers.Get_AllBuyers)           //Get all buyers
 	r.Get("/GetBuyerPerId/{Id}", Controllers.Get_BuyerPerId)    //Get buyer per id
 	r.Get("/GetBuyerPerDay/{Day}", Controllers.Get_BuyerPerDay) //Get buyer per day
+	r.Post()
 
 	//Controller Product
 	r.Get("/GetProductPerDay/{Day}", Controllers.Get_ProductPerDay) //Get product per day

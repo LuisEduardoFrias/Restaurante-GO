@@ -7,7 +7,9 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/LuisEduardoFrias/Restaurante/Data"
 	"github.com/LuisEduardoFrias/Restaurante/Models"
+	"github.com/LuisEduardoFrias/Restaurante/Repository"
 	"github.com/go-chi/chi"
 )
 
@@ -77,4 +79,11 @@ func Get_BuyerPerId(w http.ResponseWriter, r *http.Request) {
 //Get a list of buyers
 func Get_AllBuyers(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "listas de compradores")
+}
+
+func Set_Buyers(w http.ResponseWriter, r *http.Request) {
+
+	Models.Buyer := r.Context().Value("Buyer").(*Models.Buyer)
+
+	Repository.SetBuyer(Data.Data.ConnectionToDatabase(),)
 }

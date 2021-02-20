@@ -1,7 +1,7 @@
 package Route
 
 import (
-	"github.com/LuisEduardoFrias/Restaurante/Controllers"
+	"github.com/LuisEduardoFrias/Restaurante/GoBackEnd/Controllers"
 	"github.com/go-chi/chi"
 
 	"github.com/go-chi/cors"

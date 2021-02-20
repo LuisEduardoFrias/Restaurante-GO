@@ -6,12 +6,15 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/LuisEduardoFrias/Restaurante/Models"
+	"github.com/LuisEduardoFrias/Restaurante/GoBackEnd/Data"
+	"github.com/LuisEduardoFrias/Restaurante/GoBackEnd/Models"
 	"github.com/dgraph-io/dgo"
 	"github.com/dgraph-io/dgo/protos/api"
 )
 
-func SetBuyer(d *dgo.Txn, b *Models.Buyer) {
+var d = Data.ConnectionToDatabase()
+
+func SetBuyer(b *Models.Buyer) {
 
 	ctx := context.Background()
 
@@ -34,4 +37,22 @@ func SetBuyer(d *dgo.Txn, b *Models.Buyer) {
 	}
 
 	fmt.Println(res)
+
+	fmt.Printf(b.Name)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

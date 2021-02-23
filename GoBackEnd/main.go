@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/LuisEduardoFrias/Restaurante/Route"
-	"github.com/LuisEduardoFrias/Restaurante/Server"
+	"github.com/LuisEduardoFrias/Restaurante/GoBackEnd/Route"
+	"github.com/LuisEduardoFrias/Restaurante/GoBackEnd/Server"
 )
 
 func main() {

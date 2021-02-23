@@ -32,7 +32,7 @@ func Routes() *chi.Mux {
 	r.Get("/GetAllBuyers", Controllers.Get_AllBuyers)           //Get all buyers
 	r.Get("/GetBuyerPerId/{Id}", Controllers.Get_BuyerPerId)    //Get buyer per id
 	r.Get("/GetBuyerPerDay/{Day}", Controllers.Get_BuyerPerDay) //Get buyer per day
-	r.Post()
+	r.Post("/InsertBuyer", Controllers.Set_Buyers)
 
 	//Controller Product
 	r.Get("/GetProductPerDay/{Day}", Controllers.Get_ProductPerDay) //Get product per day

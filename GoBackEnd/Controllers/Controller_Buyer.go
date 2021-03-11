@@ -8,7 +8,6 @@ import (
 	"strconv"
 
 	"github.com/LuisEduardoFrias/Restaurante/GoBackEnd/Models"
-	"github.com/LuisEduardoFrias/Restaurante/GoBackEnd/Repository"
 	"github.com/go-chi/chi"
 )
 
@@ -87,6 +86,6 @@ func Set_Buyers(w http.ResponseWriter, r *http.Request) {
 
 	json.NewDecoder(r.Body).Decode(buyer)
 
-	Repository.SetBuyer(buyer)
+	//Repository.SetBuyer(buyer)
 
 }
